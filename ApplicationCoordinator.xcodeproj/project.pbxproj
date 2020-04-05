@@ -11,6 +11,12 @@
 		93363DAB2438A1A2008B1B1B /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363DAA2438A1A2008B1B1B /* ApplicationCoordinatorTests.swift */; };
 		93363DAD2438A1A2008B1B1B /* ApplicationCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 93363D9F2438A1A2008B1B1B /* ApplicationCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93363DB82438A1F3008B1B1B /* AppDelegateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363DB72438A1F3008B1B1B /* AppDelegateCoordinator.swift */; };
+		93363DBE2438AC08008B1B1B /* Presentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363DBD2438AC08008B1B1B /* Presentor.swift */; };
+		93363DC02438B4BD008B1B1B /* PresentorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363DBF2438B4BD008B1B1B /* PresentorProtocol.swift */; };
+		93363DE22438C685008B1B1B /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363DE12438C685008B1B1B /* MockViewController.swift */; };
+		93363DE4243A2E12008B1B1B /* PresentorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363DE3243A2E12008B1B1B /* PresentorTests.swift */; };
+		93363DE6243A2E9A008B1B1B /* PresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363DE5243A2E9A008B1B1B /* PresentationStyle.swift */; };
+		935AE8DC243A38CB00F15553 /* AppDelegateCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935AE8DB243A38CB00F15553 /* AppDelegateCoordinatorProtocol.swift */; };
 		9B0D2C1D16C4E1CC0FBBC5F0 /* Pods_ApplicationCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C003E6C383C8A8D9D842A88B /* Pods_ApplicationCoordinator.framework */; };
 		BEAA4F88AB62FEE9217E0CE0 /* Pods_ApplicationCoordinator_ApplicationCoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CE456D3D272D16E344B6CD /* Pods_ApplicationCoordinator_ApplicationCoordinatorTests.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +43,12 @@
 		93363DAA2438A1A2008B1B1B /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 		93363DAC2438A1A2008B1B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93363DB72438A1F3008B1B1B /* AppDelegateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateCoordinator.swift; sourceTree = "<group>"; };
+		93363DBD2438AC08008B1B1B /* Presentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentor.swift; sourceTree = "<group>"; };
+		93363DBF2438B4BD008B1B1B /* PresentorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentorProtocol.swift; path = /Users/thorn/Desktop/ApplicationCoordinator/ApplicationCoordinator/Classes/PresentorProtocol.swift; sourceTree = "<absolute>"; };
+		93363DE12438C685008B1B1B /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		93363DE3243A2E12008B1B1B /* PresentorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentorTests.swift; sourceTree = "<group>"; };
+		93363DE5243A2E9A008B1B1B /* PresentationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationStyle.swift; sourceTree = "<group>"; };
+		935AE8DB243A38CB00F15553 /* AppDelegateCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		B6CE456D3D272D16E344B6CD /* Pods_ApplicationCoordinator_ApplicationCoordinatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationCoordinator_ApplicationCoordinatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C003E6C383C8A8D9D842A88B /* Pods_ApplicationCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,8 +127,10 @@
 		93363DA92438A1A2008B1B1B /* ApplicationCoordinatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				93363DE3243A2E12008B1B1B /* PresentorTests.swift */,
 				93363DAA2438A1A2008B1B1B /* ApplicationCoordinatorTests.swift */,
 				93363DAC2438A1A2008B1B1B /* Info.plist */,
+				93363DE12438C685008B1B1B /* MockViewController.swift */,
 			);
 			path = ApplicationCoordinatorTests;
 			sourceTree = "<group>";
@@ -124,9 +138,21 @@
 		93363DB62438A1E3008B1B1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				93363DE7243A2EAE008B1B1B /* Presentation */,
 				93363DB72438A1F3008B1B1B /* AppDelegateCoordinator.swift */,
+				935AE8DB243A38CB00F15553 /* AppDelegateCoordinatorProtocol.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		93363DE7243A2EAE008B1B1B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				93363DBD2438AC08008B1B1B /* Presentor.swift */,
+				93363DE5243A2E9A008B1B1B /* PresentationStyle.swift */,
+				93363DBF2438B4BD008B1B1B /* PresentorProtocol.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +315,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				93363DB82438A1F3008B1B1B /* AppDelegateCoordinator.swift in Sources */,
+				93363DC02438B4BD008B1B1B /* PresentorProtocol.swift in Sources */,
+				93363DBE2438AC08008B1B1B /* Presentor.swift in Sources */,
+				935AE8DC243A38CB00F15553 /* AppDelegateCoordinatorProtocol.swift in Sources */,
+				93363DE6243A2E9A008B1B1B /* PresentationStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +326,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93363DE22438C685008B1B1B /* MockViewController.swift in Sources */,
 				93363DAB2438A1A2008B1B1B /* ApplicationCoordinatorTests.swift in Sources */,
+				93363DE4243A2E12008B1B1B /* PresentorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
