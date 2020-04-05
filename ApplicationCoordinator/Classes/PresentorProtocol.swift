@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol PresentorProtocol {
+public protocol PresentorProtocol: class {
 
     /// The top most view controller in the presented view controllers stack.
     /// If no view controllers have been presented and the root view controller is a navigation controller

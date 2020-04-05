@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import ApplicationCoordinator
 
-class MockViewController: UIViewController {
+class MockViewController: UIViewController, Coordinating {
+
+    var coordinatingDelegate: CoordinatorDelegateProtocol? {
+        didSet {
+            debugPrint("Coordinating delegate didSet: \(coordinatingDelegate)")
+        }
+    }
 
     var viewDidLoadCalled: Bool = false
     override func viewDidLoad() {
@@ -47,4 +54,30 @@ class MockViewController: UIViewController {
             completion?()
         }
     }
+
+    func showBlue() {
+        let page = BluePage()
+        coordinatingDelegate?.show(page: page, request: nil, completion: { })
+    }
+
+    func showRed() {
+
+    }
+}
+
+class RedViewController: MockViewController {
+
+    var viewHasAppeared: Bool = false
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
+}
+
+class OrangeViewController: MockViewController {
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
 }

@@ -10,17 +10,17 @@ import UIKit
 
 open class Presentor: PresentorProtocol {
 
-    final class PresentorNavigationController: UINavigationController {
+    public final class PresentorNavigationController: UINavigationController {
 
-        override func viewDidLoad() {
+        override public func viewDidLoad() {
             super.viewDidLoad()
             view.backgroundColor = .white
         }
 
     }
 
-    final class PresentorDefaultViewController: UIViewController {
-        override func viewDidLoad() {
+    public final class PresentorDefaultViewController: UIViewController {
+        override public func viewDidLoad() {
             super.viewDidLoad()
             title = "Default"
             view.backgroundColor = .white
@@ -34,7 +34,7 @@ open class Presentor: PresentorProtocol {
     public var presentationStyles: [PresentationStyle] = []
 
     public var navigationController: UINavigationController? {
-        rootViewController as? UINavigationController
+        rootViewController as? UINavigationController ?? rootViewController.navigationController
     }
 
     public var presentingViewController: UIViewController {
@@ -100,8 +100,10 @@ open class Presentor: PresentorProtocol {
         switch presentationStyle {
         case .overCurrentContext, .present:
             viewController.willMove(toParent: nil)
+            presentingViewController.viewWillAppear(animated)
             viewController.dismiss(animated: false) 
             viewController.didMove(toParent: nil)
+            presentingViewController.viewDidAppear(animated)
         case .push:
 
             if let navigationController = navigationController {
@@ -118,5 +120,8 @@ open class Presentor: PresentorProtocol {
 
     }
 
+    deinit {
+        debugPrint("Presentor deinit")
+    }
 }
 
