@@ -88,8 +88,7 @@ open class Presentor: PresentorProtocol {
         }
     }
 
-    public func dismiss(animated: Bool) {
-
+    public func dismiss(animated: Bool, completion: VoidCompletion? = nil) {
         guard let viewController = presentedViewControllers.last, let presentationStyle = presentationStyles.last else {
             return assertionFailure("There are no child view controllers that require to be dismissed")
         }
@@ -101,7 +100,7 @@ open class Presentor: PresentorProtocol {
         case .overCurrentContext, .present:
             viewController.willMove(toParent: nil)
             presentingViewController.viewWillAppear(animated)
-            viewController.dismiss(animated: false) 
+            viewController.dismiss(animated: false)
             viewController.didMove(toParent: nil)
             presentingViewController.viewDidAppear(animated)
         case .push:
@@ -118,6 +117,7 @@ open class Presentor: PresentorProtocol {
             navigationController?.setViewControllers(viewControllers, animated: animated)
         }
 
+        completion?()
     }
 
     deinit {

@@ -30,6 +30,11 @@ struct RedPage: PageProtocol {
         let controller = RedViewController()
         controller.coordinatingDelegate = delegate
         controller.view.backgroundColor = .red
+
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            let page = OrangePage()
+//            delegate.show(page: page, request: nil, completion: { })
+//        }
         return controller
     }
 
@@ -44,13 +49,24 @@ struct BluePage: PageProtocol {
         controller.coordinatingDelegate = delegate
         controller.view.backgroundColor = .blue
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let page = RedPage()
             delegate.show(page: page, request: nil, completion: { })
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
-            delegate.dismiss(animated: true, completed: { })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            delegate.dismiss(animated: true) {
+                controller.viewWillAppear(true)
+            }
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            delegate.dismiss(animated: true, completion: { })
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+            let page = OrangePage()
+            delegate.show(page: page, request: nil, completion: { })
         }
         return controller
     }
@@ -65,6 +81,10 @@ struct OrangePage: PageProtocol {
         let controller = OrangeViewController()
         controller.coordinatingDelegate = delegate
         controller.view.backgroundColor = .orange
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+            delegate.dismiss(animated: true, completion: { })
+        }
         return controller
     }
 

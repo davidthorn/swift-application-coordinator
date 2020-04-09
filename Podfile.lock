@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 339303965d6462fe3ae4e45a13094228c6ae300f
+PODS:
+  - ApplicationCoordinator (0.1.0)
+
+DEPENDENCIES:
+  - ApplicationCoordinator (from `.`)
+
+EXTERNAL SOURCES:
+  ApplicationCoordinator:
+    :path: "."
+
+SPEC CHECKSUMS:
+  ApplicationCoordinator: e097dbd50811f870a863a7432584ae01e04bb2fd
+
+PODFILE CHECKSUM: 6d0273e191375a71bdb11ac7a8e0e7d660e0208d
 
 COCOAPODS: 1.9.1

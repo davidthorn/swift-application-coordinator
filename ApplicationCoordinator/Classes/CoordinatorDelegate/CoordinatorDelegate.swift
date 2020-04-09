@@ -29,7 +29,7 @@ public final class CoordinatorDelegate: CoordinatorDelegateProtocol {
         self.presentor = presentor
     }
 
-    public func dismiss(animated: Bool, completed: @escaping () -> Void) {
+    public func dismiss(animated: Bool, completion: VoidCompletion? = nil) {
 
         guard let presentor = presentor else {
             return assertionFailure("All coordinator delegates require to have a presentor")
@@ -37,14 +37,14 @@ public final class CoordinatorDelegate: CoordinatorDelegateProtocol {
 
         if presentor.presentedViewControllers.isEmpty {
             self.presentor = nil
-            parentCoordinator?.dismiss(animated: animated, completed: { })
+            parentCoordinator?.dismiss(animated: animated, completion: completion)
         } else {
-            presentor.dismiss(animated: animated)
+            presentor.dismiss(animated: animated, completion: completion)
         }
 
     }
 
-    public func show(page: PageProtocol, request: URLRequest? = nil, completion: @escaping () -> Void) {
+    public func show(page: PageProtocol, request: URLRequest? = nil, completion: VoidCompletion? = nil) {
 
         let coordinator = CoordinatorDelegate(page: page)
         coordinator.parentCoordinator = self

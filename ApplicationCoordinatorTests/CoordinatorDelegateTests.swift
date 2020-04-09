@@ -11,17 +11,4 @@ import XCTest
 
 class CoordinatorDelegateTests: XCTestCase {
 
-    func test1() {
-
-        let homePage = HomePage()
-        let coordinatorDelegate = CoordinatorDelegate(page: homePage)
-        let homeController = homePage.viewController(delegate: coordinatorDelegate, request: nil)
-        let navigationController = Presentor.PresentorNavigationController(rootViewController: homeController)
-        let presentor = Presentor(rootViewController: navigationController)
-        coordinatorDelegate.setPresentor(presentor: presentor)
-
-        let appDelegateCoordinator = AppDelegateCoordinator(rootViewController: navigationController)
-        let window = appDelegateCoordinator.createWindow()
-
-    }
 }

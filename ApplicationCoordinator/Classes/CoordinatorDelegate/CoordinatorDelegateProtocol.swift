@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias VoidCompletion = () -> Void
+
 public protocol CoordinatorDelegateProtocol: class {
 
     var presentor: PresentorProtocol? { get }
@@ -19,8 +21,8 @@ public protocol CoordinatorDelegateProtocol: class {
     func setPresentor(presentor: PresentorProtocol)
 
     /// Presents the pages view controller using it presentaiton style.
-    func show(page: PageProtocol, request: URLRequest?, completion: @escaping () -> Void)
+    func show(page: PageProtocol, request: URLRequest?, completion: VoidCompletion?)
 
     /// Dismisses the currently displayed pages view controller from view.
-    func dismiss(animated: Bool, completed: @escaping () -> Void)
+    func dismiss(animated: Bool, completion: VoidCompletion?)
 }

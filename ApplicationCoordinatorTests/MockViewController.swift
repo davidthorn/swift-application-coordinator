@@ -11,9 +11,9 @@ import ApplicationCoordinator
 
 class MockViewController: UIViewController, Coordinating {
 
-    var coordinatingDelegate: CoordinatorDelegateProtocol? {
+    weak var coordinatingDelegate: CoordinatorDelegateProtocol? {
         didSet {
-            debugPrint("Coordinating delegate didSet: \(coordinatingDelegate)")
+            debugPrint("Coordinating delegate didSet: \(String(describing: coordinatingDelegate))")
         }
     }
 

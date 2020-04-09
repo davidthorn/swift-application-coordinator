@@ -37,6 +37,6 @@ public protocol PresentorProtocol: class {
     /// presentation style of push, will call the view controllers pop view controller method on its navigation controller.
     /// presentation style of present will call the dismiss on the view controller.
     /// presentation style of over current context will call the dismiss method on the view controller.
-    func dismiss(animated: Bool)
+    func dismiss(animated: Bool, completion: VoidCompletion?)
 
 }
