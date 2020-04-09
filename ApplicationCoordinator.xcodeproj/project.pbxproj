@@ -80,7 +80,7 @@
 		935AE8FA243A653B00F15553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		935AE905243A78AD00F15553 /* Coordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinating.swift; sourceTree = "<group>"; };
 		935AE907243A78BF00F15553 /* CoordinatorDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorDelegateProtocol.swift; sourceTree = "<group>"; };
-		9367C13B243FE14A001D4E59 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		9367C13B243FE14A001D4E59 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B6CE456D3D272D16E344B6CD /* Pods_ApplicationCoordinator_ApplicationCoordinatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationCoordinator_ApplicationCoordinatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C003E6C383C8A8D9D842A88B /* Pods_ApplicationCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50DD455C490842518543FEB /* Pods_ApplicationCoordinatorExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationCoordinatorExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +141,7 @@
 		93363D922438A1A2008B1B1B = {
 			isa = PBXGroup;
 			children = (
-				9367C13B243FE14A001D4E59 /* README */,
+				9367C13B243FE14A001D4E59 /* README.md */,
 				93363D9E2438A1A2008B1B1B /* ApplicationCoordinator */,
 				93363DA92438A1A2008B1B1B /* ApplicationCoordinatorTests */,
 				935AE8EB243A653900F15553 /* ApplicationCoordinatorExample */,
